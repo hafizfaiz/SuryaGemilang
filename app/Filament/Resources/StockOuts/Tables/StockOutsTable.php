@@ -74,7 +74,7 @@ class StockOutsTable
                     ->label('Cetak Laporan')
                     ->icon('heroicon-m-document-arrow-down')
                     ->color('danger')
-                    ->visible(fn () => auth()->user()?->hasRole(['admin', 'manajer']))
+                    ->visible(fn () => auth()->user()?->hasRole('manajer'))
                     ->action(function () {
                         $stockOuts = StockOut::with(['product.category', 'sale'])->latest()->get();
                         $pdf = Pdf::loadView('pdf.stock-out-report', ['stockOuts' => $stockOuts]);

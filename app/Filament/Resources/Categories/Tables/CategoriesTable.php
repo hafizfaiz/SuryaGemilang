@@ -59,7 +59,7 @@ class CategoriesTable
                     ->label('Cetak Laporan')
                     ->icon('heroicon-m-document-arrow-down')
                     ->color('danger')
-                    ->visible(fn () => auth()->user()?->hasRole(['admin', 'manajer']))
+                    ->visible(fn () => auth()->user()?->hasRole('manajer'))
                     ->action(function () {
                         $categories = Category::latest()->get();
                         $pdf = Pdf::loadView('pdf.category-report', ['categories' => $categories]);

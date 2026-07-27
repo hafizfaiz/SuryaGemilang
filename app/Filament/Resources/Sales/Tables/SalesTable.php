@@ -92,7 +92,7 @@ class SalesTable
                     ->label('Cetak Laporan')
                     ->icon('heroicon-m-document-arrow-down')
                     ->color('danger')
-                    ->visible(fn () => auth()->user()?->hasRole(['admin', 'manajer']))
+                    ->visible(fn () => auth()->user()?->hasRole('manajer'))
                     ->action(function () {
                         $sales = Sales::latest()->get();
                         $pdf = Pdf::loadView('pdf.sales-report', ['sales' => $sales]);

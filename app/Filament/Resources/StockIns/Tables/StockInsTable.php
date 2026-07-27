@@ -76,7 +76,7 @@ class StockInsTable
                     ->label('Cetak Laporan')
                     ->icon('heroicon-m-document-arrow-down')
                     ->color('danger')
-                    ->visible(fn () => auth()->user()?->hasRole(['admin', 'manajer']))
+                    ->visible(fn () => auth()->user()?->hasRole('manajer'))
                     ->action(function () {
                         $stockIns = StockIn::with(['product.category'])->latest()->get();
                         $pdf = Pdf::loadView('pdf.stock-in-report', ['stockIns' => $stockIns]);

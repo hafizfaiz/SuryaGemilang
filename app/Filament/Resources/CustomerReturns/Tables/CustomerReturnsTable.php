@@ -89,7 +89,7 @@ class CustomerReturnsTable
                     ->label('Cetak Laporan')
                     ->icon('heroicon-m-document-arrow-down')
                     ->color('danger')
-                    ->visible(fn () => auth()->user()?->hasRole(['admin', 'manajer']))
+                    ->visible(fn () => auth()->user()?->hasRole('manajer'))
                     ->action(function () {
                         $returns = CustomerReturn::with(['sale', 'product'])->latest()->get();
                         $pdf = Pdf::loadView('pdf.customer-return-report', ['returns' => $returns]);
