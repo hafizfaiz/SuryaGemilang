@@ -13,7 +13,7 @@ use App\Filament\Resources\StockIns\StockInResource;
 
 class LowStockProductsWidget extends BaseWidget
 {
-    protected static ?int $sort = 5;
+    protected static ?int $sort = 8;
 
     protected int|string|array $columnSpan = 'full';
 

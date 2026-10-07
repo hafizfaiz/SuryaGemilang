@@ -9,7 +9,7 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class ProductStockOverview extends StatsOverviewWidget
 {
-    protected static ?int $sort = 2;
+    protected static ?int $sort = 7;
 
     protected function getStats(): array
     {

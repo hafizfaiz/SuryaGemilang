@@ -121,11 +121,18 @@ class ProductForm
                     ->maxLength(255),
 
                 TextInput::make('price')
-                    ->label('Harga')
+                    ->label('Harga Jual')
                     ->numeric()
                     ->minValue(0)
                     ->prefix('Rp')
                     ->required(),
+
+                TextInput::make('cost_price')
+                    ->label('Harga Modal (HPP)')
+                    ->numeric()
+                    ->minValue(0)
+                    ->prefix('Rp')
+                    ->placeholder('Opsional (Default: 70% harga jual)'),
 
                 TextInput::make('stock')
                     ->label('Stok')

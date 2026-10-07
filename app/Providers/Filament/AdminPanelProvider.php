@@ -12,6 +12,8 @@ use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use App\Filament\Widgets\SalesChart;
 use App\Filament\Widgets\ProductChart;
+use App\Filament\Widgets\SalesByCategoryChart;
+use App\Filament\Widgets\CustomerSegmentChart;
 use App\Filament\Widgets\ProductStockOverview;
 use App\Filament\Widgets\SalesStatistics;
 use App\Filament\Widgets\LatestSales;
@@ -67,9 +69,11 @@ class AdminPanelProvider extends PanelProvider
 
     ->widgets([
         SalesStatistics::class,
-        ProductStockOverview::class,
         SalesChart::class,
         ProductChart::class,
+        SalesByCategoryChart::class,
+        CustomerSegmentChart::class,
+        ProductStockOverview::class,
         LowStockProductsWidget::class,
         LatestSales::class,
     ])

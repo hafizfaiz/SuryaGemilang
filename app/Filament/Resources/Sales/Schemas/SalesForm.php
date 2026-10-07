@@ -31,13 +31,40 @@ class SalesForm
                     ->required()
                     ->columnSpan(1),
 
-
                 TextInput::make('total_price')
                     ->label('Total Harga')
                     ->numeric()
                     ->disabled()
                     ->dehydrated()
                     ->default(0)
+                    ->columnSpan(1),
+
+                Select::make('region')
+                    ->label('Wilayah / Region')
+                    ->options([
+                        'Jawa Barat' => 'Jawa Barat',
+                        'Jabodetabek' => 'Jabodetabek',
+                        'Jawa Tengah' => 'Jawa Tengah',
+                        'Jawa Timur' => 'Jawa Timur',
+                        'Banten' => 'Banten',
+                        'Sumatera' => 'Sumatera',
+                        'Bali & Nusa Tenggara' => 'Bali & Nusa Tenggara',
+                        'Kalimantan & Sulawesi' => 'Kalimantan & Sulawesi',
+                    ])
+                    ->default('Jawa Barat')
+                    ->required()
+                    ->columnSpan(1),
+
+                Select::make('customer_segment')
+                    ->label('Customer Segment')
+                    ->options([
+                        'Retail' => 'Retail (Eceran)',
+                        'Grosir' => 'Grosir (Wholesale)',
+                        'Bengkel' => 'Bengkel (Reseller)',
+                        'Corporate' => 'Corporate (B2B)',
+                    ])
+                    ->default('Retail')
+                    ->required()
                     ->columnSpan(1),
 
 

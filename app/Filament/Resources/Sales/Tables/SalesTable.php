@@ -23,9 +23,27 @@ class SalesTable
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('customer_name')
-                ->label('Nama Pembeli')    
-                ->sortable()
-                ->searchable(),
+                    ->label('Nama Pembeli')    
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('region')
+                    ->label('Wilayah')
+                    ->badge()
+                    ->sortable()
+                    ->searchable()
+                    ->toggleable(),
+                TextColumn::make('customer_segment')
+                    ->label('Segmen')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'Corporate' => 'success',
+                        'Grosir' => 'warning',
+                        'Bengkel' => 'info',
+                        default => 'gray',
+                    })
+                    ->sortable()
+                    ->searchable()
+                    ->toggleable(),
                 TextColumn::make('products')
                     ->label('Daftar Barang')
                     ->sortable()

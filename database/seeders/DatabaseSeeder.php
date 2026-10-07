@@ -130,6 +130,7 @@ class DatabaseSeeder extends Seeder
                 'type_name' => $categories[$p['cat']]->type_name,
                 'product_name' => $p['name'],
                 'price' => $p['price'],
+                'cost_price' => round($p['price'] * 0.70, -3),
                 'stock' => $p['stock'],
                 'safety_stock' => $p['safety'],
                 'daily_usage' => $p['daily'],
@@ -194,10 +195,15 @@ class DatabaseSeeder extends Seeder
                 ];
             }
 
+            $regions = ['Jawa Barat', 'Jabodetabek', 'Jawa Tengah', 'Jawa Timur', 'Banten', 'Sumatera', 'Bali & Nusa Tenggara'];
+            $segments = ['Retail', 'Grosir', 'Bengkel', 'Corporate'];
+
             $sale = Sales::create([
                 'user_id' => ($index % 3 == 0) ? $admin->id : $kasir->id,
                 'invoice_number' => 'INV-' . str_pad($index + 1, 3, '0', STR_PAD_LEFT),
                 'customer_name' => $customers[$index % count($customers)],
+                'region' => $regions[$index % count($regions)],
+                'customer_segment' => $segments[$index % count($segments)],
                 'products' => $items,
                 'total_price' => $totalPrice,
             ]);

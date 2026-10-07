@@ -12,6 +12,8 @@ class Sales extends Model
         'user_id',
         'invoice_number',
         'customer_name',
+        'region',
+        'customer_segment',
         'products',
         'total_price',
     ];

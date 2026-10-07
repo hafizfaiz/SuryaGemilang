@@ -15,6 +15,7 @@ class Product extends Model
         'type_name',
         'product_name',
         'price',
+        'cost_price',
         'stock',
         'safety_stock',
         'daily_usage',
@@ -25,6 +26,7 @@ class Product extends Model
     ];
     protected $casts = [
         'price' => 'decimal:2',
+        'cost_price' => 'decimal:2',
         'stock' => 'integer',
         'safety_stock' => 'integer',
         'daily_usage' => 'decimal:2',

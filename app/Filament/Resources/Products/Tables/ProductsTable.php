@@ -31,10 +31,15 @@ class ProductsTable
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('price')
-                    ->label('Harga')
-                    ->numeric()
+                    ->label('Harga Jual')
+                    ->money('IDR')
                     ->sortable()
                     ->searchable(),
+                TextColumn::make('cost_price')
+                    ->label('Harga Modal')
+                    ->money('IDR')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('stock')
                     ->label('Stok')
                     ->sortable()
