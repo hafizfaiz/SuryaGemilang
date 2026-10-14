@@ -39,9 +39,14 @@ class SalesChart extends ChartWidget
                     'label' => 'Total Revenue (Rp)',
                     'data' => $data,
                     'borderColor' => '#10b981',
-                    'backgroundColor' => 'rgba(16, 185, 129, 0.15)',
+                    'backgroundColor' => 'rgba(16, 185, 129, 0.12)',
                     'fill' => true,
-                    'tension' => 0.35,
+                    'tension' => 0.4,
+                    'pointBackgroundColor' => '#10b981',
+                    'pointBorderColor' => '#ffffff',
+                    'pointBorderWidth' => 2,
+                    'pointRadius' => 4,
+                    'pointHoverRadius' => 6,
                 ],
             ],
             'labels' => [
@@ -54,5 +59,39 @@ class SalesChart extends ChartWidget
     protected function getType(): string
     {
         return 'line';
+    }
+
+    protected function getOptions(): array
+    {
+        return [
+            'plugins' => [
+                'legend' => [
+                    'display' => false,
+                ],
+                'tooltip' => [
+                    'mode' => 'index',
+                    'intersect' => false,
+                ],
+            ],
+            'scales' => [
+                'y' => [
+                    'beginAtZero' => true,
+                    'grid' => [
+                        'display' => true,
+                        'color' => 'rgba(0,0,0,0.05)',
+                    ],
+                ],
+                'x' => [
+                    'grid' => [
+                        'display' => false,
+                    ],
+                ],
+            ],
+            'interaction' => [
+                'mode' => 'nearest',
+                'axis' => 'x',
+                'intersect' => false,
+            ],
+        ];
     }
 }

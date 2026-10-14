@@ -64,4 +64,25 @@ class CustomerSegmentChart extends ChartWidget
     {
         return 'doughnut';
     }
+
+    protected function getOptions(): array
+    {
+        return [
+            'cutout' => '65%',
+            'plugins' => [
+                'legend' => [
+                    'display' => true,
+                    'position' => 'bottom',
+                    'labels' => [
+                        'padding' => 16,
+                        'usePointStyle' => true,
+                        'pointStyle' => 'circle',
+                    ],
+                ],
+                'tooltip' => [
+                    'mode' => 'point',
+                ],
+            ],
+        ];
+    }
 }

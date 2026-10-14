@@ -93,12 +93,20 @@ class ProductChart extends ChartWidget
                 'legend' => [
                     'display' => false,
                 ],
+                'tooltip' => [
+                    'mode' => 'index',
+                    'intersect' => false,
+                ],
             ],
             'scales' => [
                 'x' => [
                     'beginAtZero' => true,
                     'grid' => [
                         'display' => true,
+                        'color' => 'rgba(0,0,0,0.05)',
+                    ],
+                    'ticks' => [
+                        'stepSize' => 1,
                     ],
                 ],
                 'y' => [
